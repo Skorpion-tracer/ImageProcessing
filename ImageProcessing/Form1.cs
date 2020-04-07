@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
@@ -39,7 +35,7 @@ namespace ImageProcessing
 
         private void RunProcessing(Bitmap bitmap)
         {
-            var pixels = GetPixels(bitmap);            
+            var pixels = GetPixels(bitmap);
             var pixelsInStep = (bitmap.Width * bitmap.Height) / 100;
             var currentPixelSet = new List<Pixel>(pixels.Count - pixelsInStep);
 
@@ -85,10 +81,9 @@ namespace ImageProcessing
 
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
-            //Text = trackBar1.Value.ToString();
             if (_bitmaps == null || _bitmaps.Count == 0)
                 return;
-            
+
             pictureBox1.Image = _bitmaps[trackBar1.Value - 1];
         }
     }
